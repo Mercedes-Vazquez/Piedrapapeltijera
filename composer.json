@@ -1,0 +1,23 @@
+{
+    "name": "factoria/piedrapapeltijera",
+    "require": {
+        "phpunit/phpunit": "^9.4"
+    },
+
+    "autoload": {
+        "psr-4": {
+          "App\\": "src/"
+        }
+      },
+      "autoload-dev": {
+        "psr-4": {
+          "Tests\\": "tests"
+            }
+        },
+    "authors": [
+        {
+            "name": "Mercedes",
+            "email": "mvazquezsan@gmail.com"
+        }
+    ]
+}
