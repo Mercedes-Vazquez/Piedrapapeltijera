@@ -149,39 +149,33 @@ namespace App\Models;
         if ($choice1 === $choice2){
             $this->tiedGame();
             return $this->getResult();
-            return;
         }
         
         if ($choice1 === 'rock')
         {
             $this->choiceRock($choice2);
             return $this->getResult();
-            return;
         }
 
        if ($choice1 === 'paper')
         {
             $this->choicePaper($choice2);
             return $this->getResult();
-            return;
         }
 
         if ($choice1 === 'scissors'){
             $this->choiceScissors($choice2);
             return $this->getResult();
-            return;
         }
 
         if ($choice1 === 'lizzard'){
             $this->choiceLizzard($choice2);
             return $this->getResult();
-            return;
         }
 
         if ($choice1 === 'spock'){
             $this->choiceSpock($choice2);
             return $this->getResult();
-            return;
         }
     
     }
