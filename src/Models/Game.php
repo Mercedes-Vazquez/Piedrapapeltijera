@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Game 
+class Game extends Rules implements iPlay
 {
     public string $result;
 
@@ -14,21 +14,9 @@ class Game
 
     public function play()
     {
-        if($this->choice1 == $this->choice2)
-        {
-            $result = "tied game";
+       $result =  $this->startGame($this->choice1, $this->choice2);
+       return $result;
 
-            return $result;
-        }
 
-        
-
-        else if ($this->choice1 === "rock" && $this->choice2 === "scissors")
-        {
-
-            $result = "rock wins";
-
-            return $result;
-        }
     }
 }
