@@ -10,19 +10,25 @@ namespace App\Models;
     
     private function choiceRock($opponent)
     {
-        if ($opponent === 'rock')
-        {
-            $this->result = 'tied game';
-            return;
-        }
+        
         if ($opponent === 'paper')
         {
-            $this->result = 'rock loose';
+            $this->result = 'paper wins';
             return;
         }
         if ($opponent === 'scissors')
         {
             $this->result = 'rock wins';
+            return;
+        }
+        if ($opponent === 'lizzard')
+        {
+            $this->result = 'rock wins';
+            return;
+        }
+        if ($opponent === 'spock')
+        {
+            $this->result = 'spock wins';
             return;
         }
         
@@ -35,14 +41,22 @@ namespace App\Models;
             $this->result = 'paper wins';
             return;
         }
-        if ($opponent === 'paper')
-        {
-            $this->result = 'tied game';
-            return;
-        }
+    
         if ($opponent === 'scissors')
         {
-            $this->result = 'paper loose';
+            $this->result = 'scissors wins';
+            return;
+        }
+
+        if ($opponent === 'lizzard')
+        {
+            $this->result = 'lizzard wins';
+            return;
+        }
+
+        if ($opponent === 'spock')
+        {
+            $this->result = 'paper wins';
             return;
         }
         
@@ -52,7 +66,7 @@ namespace App\Models;
     {
         if ($opponent === 'rock')
         {
-            $this->result = 'scissors loose';
+            $this->result = 'rock wins';
             return;
         }
         if ($opponent === 'paper')
@@ -60,11 +74,72 @@ namespace App\Models;
             $this->result = 'scissors wins';
             return;
         }
-        if ($opponent === 'scissors')
+
+        if ($opponent === 'lizzard')
         {
-            $this->result = 'tied game';
+            $this->result = 'scissors win';
+            return;
+        }
+
+        if ($opponent === 'spock')
+        {
+            $this->result = 'spock win';
             return;
         }        
+    }
+
+    private function choiceLizzard($opponent)
+    {
+        if ($opponent === 'rock')
+        {
+            $this->result = 'rock wins';
+            return;
+        }
+        if ($opponent === 'paper')
+        {
+            $this->result = 'lizzard wins';
+            return;
+        }
+        if ($opponent === 'scissors')
+        {
+            $this->result = 'scissors win';
+            return;
+        }        
+        if ($opponent === 'spock')
+        {
+            $this->result = 'lizzard win';
+            return;
+        }        
+    }
+
+    private function choiceSpock($opponent)
+    {
+        if ($opponent === 'rock')
+        {
+            $this->result = 'spock wins';
+            return;
+        }
+        if ($opponent === 'paper')
+        {
+            $this->result = 'paper wins';
+            return;
+        }
+        if ($opponent === 'scissors')
+        {
+            $this->result = 'spock win';
+            return;
+        }        
+        if ($opponent === 'lizzard')
+        {
+            $this->result = 'lizzard win';
+            return;
+        }              
+    }
+
+    private function tiedGame()
+    {
+        $this->result = 'tied game';
+        return;
     }
 
     
@@ -74,17 +149,40 @@ namespace App\Models;
         {
             $this->choiceRock($choice2);
             return $this->getResult();
+            return;
         }
-        else if ($choice1 === 'paper')
+
+       if ($choice1 === 'paper')
         {
             $this->choicePaper($choice2);
             return $this->getResult();
+            return;
         }
-        else 
-        {
+
+        if ($choice1 === 'scissors'){
             $this->choiceScissors($choice2);
             return $this->getResult();
+            return;
         }
+
+        if ($choice1 === 'lizzard'){
+            $this->choiceLizzard($choice2);
+            return $this->getResult();
+            return;
+        }
+
+        if ($choice1 === 'spock'){
+            $this->choiceSpock($choice2);
+            return $this->getResult();
+            return;
+        }
+
+        if ($choice1 === $choice2){
+            $this->tiedGame();
+            return $this->getResult();
+            return;
+        }
+    
     }
     
     private function getResult()
