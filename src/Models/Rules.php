@@ -5,10 +5,10 @@ namespace App\Models;
 
  Abstract class Rules
 {
-    public string $result;
+    private string $result;
     
     
-    public function choiceRock($opponent)
+    private function choiceRock($opponent)
     {
         if ($opponent === 'rock')
         {
@@ -27,7 +27,8 @@ namespace App\Models;
         }
         
     }
-    public function choicePaper($opponent)
+
+    private function choicePaper($opponent)
     {
         if ($opponent === 'rock')
         {
@@ -47,7 +48,7 @@ namespace App\Models;
         
     }
     
-    public function choiceScissors($opponent)
+    private function choiceScissors($opponent)
     {
         if ($opponent === 'rock')
         {
@@ -67,7 +68,7 @@ namespace App\Models;
     }
 
     
-    public function startGame($choice1, $choice2)
+    protected function startGame($choice1, $choice2)
     {
         if ($choice1 === 'rock')
         {
@@ -86,7 +87,7 @@ namespace App\Models;
         }
     }
     
-    public function getResult()
+    private function getResult()
     {
         return $this->result;
     }

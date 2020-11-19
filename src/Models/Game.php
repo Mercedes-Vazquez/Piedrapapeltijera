@@ -16,7 +16,5 @@ class Game extends Rules implements iPlay
     {
        $result =  $this->startGame($this->choice1, $this->choice2);
        return $result;
-
-
     }
 }
