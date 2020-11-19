@@ -145,6 +145,13 @@ namespace App\Models;
     
     protected function startGame($choice1, $choice2)
     {
+
+        if ($choice1 === $choice2){
+            $this->tiedGame();
+            return $this->getResult();
+            return;
+        }
+        
         if ($choice1 === 'rock')
         {
             $this->choiceRock($choice2);
@@ -173,12 +180,6 @@ namespace App\Models;
 
         if ($choice1 === 'spock'){
             $this->choiceSpock($choice2);
-            return $this->getResult();
-            return;
-        }
-
-        if ($choice1 === $choice2){
-            $this->tiedGame();
             return $this->getResult();
             return;
         }
