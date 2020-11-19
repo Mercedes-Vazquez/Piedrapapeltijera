@@ -17,8 +17,18 @@ class Game
         if($this->choice1 == $this->choice2)
         {
             $result = "tied game";
+
+            return $result;
         }
 
-        return $result;
+        
+
+        else if ($this->choice1 === "rock" && $this->choice2 === "scissors")
+        {
+
+            $result = "rock wins";
+
+            return $result;
+        }
     }
 }
