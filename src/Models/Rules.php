@@ -34,33 +34,33 @@ namespace App\Models;
         
     }
 
-    private function choicePaper($opponent)
-    {
-        if ($opponent === 'rock')
-        {
-            $this->result = 'paper wins';
-            return;
-        }
+    // private function choicePaper($opponent)
+    // {
+    //     if ($opponent === 'rock')
+    //     {
+    //         $this->result = 'paper wins';
+    //         return;
+    //     }
     
-        if ($opponent === 'scissors')
-        {
-            $this->result = 'scissors wins';
-            return;
-        }
+    //     if ($opponent === 'scissors')
+    //     {
+    //         $this->result = 'scissors wins';
+    //         return;
+    //     }
 
-        if ($opponent === 'lizzard')
-        {
-            $this->result = 'lizzard wins';
-            return;
-        }
+    //     if ($opponent === 'lizzard')
+    //     {
+    //         $this->result = 'lizzard wins';
+    //         return;
+    //     }
 
-        if ($opponent === 'spock')
-        {
-            $this->result = 'paper wins';
-            return;
-        }
+    //     if ($opponent === 'spock')
+    //     {
+    //         $this->result = 'paper wins';
+    //         return;
+    //     }
         
-    }
+    // }
     
     private function choiceScissors($opponent)
     {
@@ -159,7 +159,7 @@ namespace App\Models;
 
        if ($choice1 === 'paper')
         {
-            $this->choicePaper($choice2);
+            $this->result = new Paper($choice2);
             return $this->getResult();
         }
 
