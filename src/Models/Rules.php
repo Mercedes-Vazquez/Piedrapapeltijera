@@ -8,31 +8,31 @@ namespace App\Models;
     private string $result;
     
     
-    private function choiceRock($opponent)
-    {
+    // private function choiceRock($opponent)
+    // {
         
-        if ($opponent === 'paper')
-        {
-            $this->result = 'paper wins';
-            return;
-        }
-        if ($opponent === 'scissors')
-        {
-            $this->result = 'rock wins';
-            return;
-        }
-        if ($opponent === 'lizzard')
-        {
-            $this->result = 'rock wins';
-            return;
-        }
-        if ($opponent === 'spock')
-        {
-            $this->result = 'spock wins';
-            return;
-        }
+    //     if ($opponent === 'paper')
+    //     {
+    //         $this->result = 'paper wins';
+    //         return;
+    //     }
+    //     if ($opponent === 'scissors')
+    //     {
+    //         $this->result = 'rock wins';
+    //         return;
+    //     }
+    //     if ($opponent === 'lizzard')
+    //     {
+    //         $this->result = 'rock wins';
+    //         return;
+    //     }
+    //     if ($opponent === 'spock')
+    //     {
+    //         $this->result = 'spock wins';
+    //         return;
+    //     }
         
-    }
+    // }
 
     // private function choicePaper($opponent)
     // {
@@ -153,7 +153,7 @@ namespace App\Models;
         
         if ($choice1 === 'rock')
         {
-            $this->choiceRock($choice2);
+            $this->result = new Rock($choice2);
             return $this->getResult();
         }
 
