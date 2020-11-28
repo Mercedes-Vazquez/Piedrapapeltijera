@@ -28,12 +28,12 @@ Class Lizzard implements iPlay
         }
         if ($this->opponent === 'scissors')
         {
-            return $this->result = 'scissors win';
+            return $this->result = 'scissors wins';
             
         }        
         if ($this->opponent === 'spock')
         {
-            return $this->result = 'lizzard win';
+            return $this->result = 'lizzard wins';
             
         }        
         
