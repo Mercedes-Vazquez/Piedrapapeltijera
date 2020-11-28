@@ -7,135 +7,9 @@ use App\Models\Rock;
  Abstract class Rules
 {
     private string $result;
-    
-    
-    // private function choiceRock($opponent)
-    // {
-        
-    //     if ($opponent === 'paper')
-    //     {
-    //         $this->result = 'paper wins';
-    //         return;
-    //     }
-    //     if ($opponent === 'scissors')
-    //     {
-    //         $this->result = 'rock wins';
-    //         return;
-    //     }
-    //     if ($opponent === 'lizzard')
-    //     {
-    //         $this->result = 'rock wins';
-    //         return;
-    //     }
-    //     if ($opponent === 'spock')
-    //     {
-    //         $this->result = 'spock wins';
-    //         return;
-    //     }
-        
-    // }
 
-    // private function choicePaper($opponent)
-    // {
-    //     if ($opponent === 'rock')
-    //     {
-    //         $this->result = 'paper wins';
-    //         return;
-    //     }
-    
-    //     if ($opponent === 'scissors')
-    //     {
-    //         $this->result = 'scissors wins';
-    //         return;
-    //     }
 
-    //     if ($opponent === 'lizzard')
-    //     {
-    //         $this->result = 'lizzard wins';
-    //         return;
-    //     }
-
-    //     if ($opponent === 'spock')
-    //     {
-    //         $this->result = 'paper wins';
-    //         return;
-    //     }
-        
-    // }
-    
-    private function choiceScissors($opponent)
-    {
-        if ($opponent === 'rock')
-        {
-            $this->result = 'rock wins';
-            return;
-        }
-        if ($opponent === 'paper')
-        {
-            $this->result = 'scissors wins';
-            return;
-        }
-
-        if ($opponent === 'lizzard')
-        {
-            $this->result = 'scissors win';
-            return;
-        }
-
-        if ($opponent === 'spock')
-        {
-            $this->result = 'spock win';
-            return;
-        }        
-    }
-
-    private function choiceLizzard($opponent)
-    {
-        if ($opponent === 'rock')
-        {
-            $this->result = 'rock wins';
-            return;
-        }
-        if ($opponent === 'paper')
-        {
-            $this->result = 'lizzard wins';
-            return;
-        }
-        if ($opponent === 'scissors')
-        {
-            $this->result = 'scissors win';
-            return;
-        }        
-        if ($opponent === 'spock')
-        {
-            $this->result = 'lizzard win';
-            return;
-        }        
-    }
-
-    private function choiceSpock($opponent)
-    {
-        if ($opponent === 'rock')
-        {
-            $this->result = 'spock wins';
-            return;
-        }
-        if ($opponent === 'paper')
-        {
-            $this->result = 'paper wins';
-            return;
-        }
-        if ($opponent === 'scissors')
-        {
-            $this->result = 'spock win';
-            return;
-        }        
-        if ($opponent === 'lizzard')
-        {
-            $this->result = 'lizzard win';
-            return;
-        }              
-    }
+ 
 
     private function tiedGame()
     {
@@ -167,17 +41,23 @@ use App\Models\Rock;
         }
 
         if ($choice1 === 'scissors'){
-            $this->choiceScissors($choice2);
+
+            $scissors= new Scissors($choice2);
+            $this->result = $scissors->result;
             return $this->getResult();
         }
 
         if ($choice1 === 'lizzard'){
-            $this->choiceLizzard($choice2);
+           
+            $lizzard = new Lizzard($choice2);
+            $this->result = $lizzard->result;
             return $this->getResult();
         }
 
         if ($choice1 === 'spock'){
-            $this->choiceSpock($choice2);
+            
+            $spock = new Spock ($choice2);
+            $this->result = $spock->result;
             return $this->getResult();
         }
     
