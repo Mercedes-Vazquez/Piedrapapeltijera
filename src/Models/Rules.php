@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Rock;
 
 
  Abstract class Rules
@@ -153,13 +154,15 @@ namespace App\Models;
         
         if ($choice1 === 'rock')
         {
-            $this->result = new Rock($choice2);
+            $rock = new Rock($choice2);
+            $this->result = $rock->result;
             return $this->getResult();
         }
 
        if ($choice1 === 'paper')
         {
-            $this->result = new Paper($choice2);
+            $paper= new Paper($choice2);
+            $this->result = $paper->result;
             return $this->getResult();
         }
 

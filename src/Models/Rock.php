@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 Class Rock implements iPlay 
 {
     public string $result; 
@@ -14,19 +15,19 @@ Class Rock implements iPlay
 
     public function play(): string
     {
-        if ($opponent === 'paper')
+        if ($this->opponent === 'paper')
         {
             return $this->result = 'paper wins'; 
         }
-        if ($opponent === 'scissors')
+        if ($this->opponent === 'scissors')
         {
             return $this->result = 'rock wins';
         }
-        if ($opponent === 'lizzard')
+        if ($this->opponent === 'lizzard')
         {
             return $this->result = 'rock wins';
         }
-        if ($opponent === 'spock')
+        if ($this->opponent === 'spock')
         {
             return $this->result = 'spock wins';
         }

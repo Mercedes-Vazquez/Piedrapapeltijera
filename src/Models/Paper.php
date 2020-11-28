@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 Class Paper implements iPlay 
 {
     public string $result; 
